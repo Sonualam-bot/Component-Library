@@ -1,0 +1,87 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+.parent-container {
+  display: flex;
+  gap: 7rem;
+  padding: 1rem;
+  height: 90vh;
+  width: 98vw;
+}
+
+.links-container {
+  display: flex;
+  flex: 0 0 13vw;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 0.5rem;
+  /* width: 20vw; */
+  text-align: left;
+  border-right: 1px solid black;
+  height: 100%;
+  margin-top: 0.8rem;
+}
+
+.intro {
+  padding-bottom: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.navigation-navlink {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.navigation-navlink.active {
+  background-color: #7dd3fc;
+}
+
+.navigation-navlink:hover {
+  background-color: #7dd3fc;
+}
+
+.routes-container {
+  margin-top: 1rem;
+  padding: 0 0.8rem 0 0;
+  overflow: scroll;
+  overflow-x: hidden;
+}
