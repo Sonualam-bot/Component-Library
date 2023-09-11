@@ -25,3 +25,20 @@
   color: black;
   font-weight: 550;
 }
+
+/* //search suggestion component */
+.suggestionContainer {
+  position: relative;
+  height: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.suggestionComp {
+  padding: 0.4rem;
+  border: 1px solid #9ca3af;
+  background-color: #7dd3fc;
+  z-index: 1;
+  /* position: absolute; */
+  top: 0;
+}
