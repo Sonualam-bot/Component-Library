@@ -1,0 +1,21 @@
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  gap: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: cursive;
+}
+
+.getStarted {
+  text-decoration: none;
+  font-size: 1.8rem;
+  box-shadow: 3px 4px 2px 3px #6366f1;
+  padding: 0.5rem;
+  border-radius: 15px;
+}

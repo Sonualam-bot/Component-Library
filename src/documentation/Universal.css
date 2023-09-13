@@ -1,3 +1,30 @@
 svg {
   font-size: 1.3rem;
 }
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100vw;
+  margin: auto;
+  margin-top: 1.4rem;
+  /* text-align: center; */
+  position: relative;
+}
+
+.navlink3 {
+  text-decoration: none;
+  font-size: 1.8rem;
+  /* box-shadow: 3px 4px 2px 3px #6366f1;
+  padding: 0.5rem;
+  border-radius: 15px;
+  margin: 2rem; */
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.linkContainer {
+  width: 100%;
+  margin: auto;
+}

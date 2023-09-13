@@ -1,5 +1,5 @@
-import { Header } from "./pages/components/Header";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Header } from "./pages/component/Header";
+import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import "./index.css";
 import { Home } from "./pages/Home/Home";
 import { AvatarDoc } from "./documentation/AvatarDoc";
@@ -7,10 +7,9 @@ import { AlertDoc } from "./documentation/AlertDoc";
 import { BadgeDoc } from "./documentation/BadgeDoc";
 import { ButtonDoc } from "./documentation/ButtonDoc";
 import { CardDoc } from "./documentation/CardDoc";
-import { HeadingDoc } from "./documentation/HeadingDoc";
-import { ImageDoc } from "./documentation/ImageDoc";
-import { Utility } from "./components/Utility/Utility";
 import { Introduction } from "./documentation/Introduction";
+import { NavigationDoc } from "./documentation/NavigationDoc";
+import { UtilityDoc } from "./documentation/UtilityDoc";
 
 //icons
 import { FaUserSecret } from "react-icons/fa";
@@ -20,15 +19,26 @@ import { CgPlayButtonR } from "react-icons/cg";
 import { BsCardImage } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
 import { ImImages } from "react-icons/im";
+import { TbNavigationCode } from "react-icons/tb"
+import { Component } from "./pages/component/Component";
 
 
 export default function App() {
+  const location = useLocation();
+  const showSideBar = location.pathname !== "/" && location.pathname !== "/comp";
+
+
+
+
+
   return (
     <div className="App">
       <Header />
       <div className="parent-container">
-        <div className="links-container">
-          <h2>Getting Started</h2>
+
+
+        {showSideBar && <div className="links-container">
+          {/* <h3>Getting Started</h3> */}
           <NavLink className="navigation-navlink intro" to="/introduction">
             Introduction
           </NavLink>
@@ -52,19 +62,17 @@ export default function App() {
             <BsCardImage />
             Card
           </NavLink>
-
-          <NavLink className="navigation-navlink" to="/image">
-            <ImImages />
-            Image
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/text">
-            Text
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/heading">
+          <NavLink className="navigation-navlink" to="/utility">
             <AiOutlineSetting />
             Utility
           </NavLink>
+          <NavLink className="navigation-navlink" to="/navigation">
+            <TbNavigationCode />
+            Navigation
+          </NavLink>
         </div>
+        }
+
         <div className="routes-container">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -74,9 +82,10 @@ export default function App() {
             <Route path="/badge" element={<BadgeDoc />} />
             <Route path="/button" element={<ButtonDoc />} />
             <Route path="/card" element={<CardDoc />} />
-            <Route path="/heading" element={<HeadingDoc />} />
-            <Route path="/image" element={<ImageDoc />} />
-            <Route path="/text" element={<Utility />} />
+            {/* <Route path="/heading" element={<HeadingDoc />} /> */}
+            <Route path="/navigation" element={<NavigationDoc />} />
+            <Route path="/utility" element={<UtilityDoc />} />
+            <Route path="/comp" element={<Component />} />
           </Routes>
         </div>
       </div>

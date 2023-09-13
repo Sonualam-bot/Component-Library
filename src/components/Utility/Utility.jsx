@@ -1,9 +1,3 @@
-export const Utility = () => {
-    return (
-        <>
-            <div>
-                <h3>This is text page</h3>
-            </div>
-        </>
-    );
-};
+import { HeadingContaner, FontDiv, FontDivContainer, Bold } from "./Utility.Style"
+
+export { HeadingContaner, FontDiv, FontDivContainer, Bold }

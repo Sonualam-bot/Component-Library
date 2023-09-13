@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  border: 2px solid #42A5F5;
+  border: 2px solid #818cf8;
+  border-radius: 0.5rem;
   background-color: ${(props) =>
-    props.variant === "outline" ? "#FFF" : "#42A5F5"};
-  color: ${(props) => (props.variant === "outline" ? "#42A5F5" : "#FFF")};
+    props.variant === "outline" ? "#FFF" : "#818cf8"};
+  color: ${(props) => (props.variant === "outline" ? "#6366f1" : "#FFF")};
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -16,11 +17,11 @@ export const StyledButton = styled.button`
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.5s all ease-out;
+  transition: 0.2s all ease-out;
   &:hover {
     background-color: ${(props) =>
-    props.variant !== "outline" ? "#FFF" : "#42A5F5"};
-    color: ${(props) => (props.variant !== "outline" ? "#42A5F5" : "#FFF")};
+    props.variant !== "outline" ? "#FFF" : "#818cf8"};
+    color: ${(props) => (props.variant !== "outline" ? "#818cf8" : "#FFF")};
   }
 `;
 
@@ -36,11 +37,15 @@ export const FancyButton = styled(StyledButton)`
 export const SubmitButton = styled(StyledButton).attrs({
   type: "Submit"
 })`
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #818cf8;
+  background-color: #818cf8;
+  &:hover{
+    color: #818cf8;
+  }
   &:active {
     background-color: ${(props) =>
-    props.variant !== "outline" ? "#FFF" : "#42A5F5"};
-    box-shadow: 0 5px #666;
+    props.variant !== "outline" ? "#818cf8" : "#FFF"};
+    box-shadow: 0 5px #818cf8;
     transform: translateY(4px);
   }
 `;

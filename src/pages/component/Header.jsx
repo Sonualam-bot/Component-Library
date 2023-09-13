@@ -17,7 +17,7 @@ export const Header = () => {
         "badge",
         "button",
         "card",
-        "image",
+        "navigation",
         "text",
         "heading"
     ]
@@ -47,7 +47,7 @@ export const Header = () => {
     return (
         <>
             <div className="header-container">
-                <h3>Renon Css Library</h3>
+                <h3 style={{ fontFamily: "cursive" }} >SleekStyles UI</h3>
                 <div>
                     <input placeholder="Search components here" className="search" value={search} onChange={handleSearch} />
                     <div className="suggestionContainer">
@@ -56,6 +56,7 @@ export const Header = () => {
                                 return (
                                     <div onClick={() => handleSearchClick(suggestion)} key={suggestion} className="suggestionComp"  >
                                         {suggestion}
+                                        <hr />
                                     </div>
                                 )
                             })
@@ -64,10 +65,10 @@ export const Header = () => {
                 </div>
 
                 <div className="right-header">
-                    <NavLink to="/" className="navlink">
+                    <NavLink to="/" className="navlinkTEM">
                         Home
                     </NavLink>
-                    <NavLink className="navlink">Components</NavLink>
+                    <NavLink to="/comp" className="navlinkTEM">Components</NavLink>
                 </div>
             </div>
         </>

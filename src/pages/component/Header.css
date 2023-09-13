@@ -2,42 +2,45 @@
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 1rem;
-  background-color: #7dd3fc;
+  background-color: #c7d2fe;
   height: 10vh;
+  box-shadow: 2px 0 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .right-header {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 
 .search {
-  padding: 0.2rem;
+  padding: 0.45rem;
   width: 250px;
   border-radius: 0.3rem;
+  border: 1px solid #eef2ff;
   outline: none;
-  caret-color: #7dd3fc;
+  outline: none;
+  caret-color: #818cf8;
   font-weight: 600;
 }
 
-.navlink {
+.navlinkTEM {
   text-decoration: none;
   color: black;
   font-weight: 550;
+  font-family: cursive;
 }
 
 /* //search suggestion component */
 .suggestionContainer {
   position: relative;
-  height: 100px;
+  height: 150px;
   overflow: scroll;
   overflow-x: hidden;
 }
 
 .suggestionComp {
   padding: 0.4rem;
-  border: 1px solid #9ca3af;
-  background-color: #7dd3fc;
+  background-color: #e0e7ff;
   z-index: 1;
   /* position: absolute; */
   top: 0;
