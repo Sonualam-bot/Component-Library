@@ -18,60 +18,54 @@ import { BiBadgeCheck } from "react-icons/bi";
 import { CgPlayButtonR } from "react-icons/cg";
 import { BsCardImage } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
-import { ImImages } from "react-icons/im";
-import { TbNavigationCode } from "react-icons/tb"
+import { TbNavigationCode } from "react-icons/tb";
 import { Component } from "./pages/component/Component";
-
 
 export default function App() {
   const location = useLocation();
-  const showSideBar = location.pathname !== "/" && location.pathname !== "/comp";
-
-
-
-
+  const showSideBar =
+    location.pathname !== "/" && location.pathname !== "/comp";
 
   return (
     <div className="App">
       <Header />
       <div className="parent-container">
-
-
-        {showSideBar && <div className="links-container">
-          {/* <h3>Getting Started</h3> */}
-          <NavLink className="navigation-navlink intro" to="/introduction">
-            Introduction
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/avatar">
-            <FaUserSecret />
-            Avatar
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/alert">
-            <GoAlert />
-            Alert
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/badge">
-            <BiBadgeCheck />
-            Badge
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/button">
-            <CgPlayButtonR />
-            Button
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/card">
-            <BsCardImage />
-            Card
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/utility">
-            <AiOutlineSetting />
-            Utility
-          </NavLink>
-          <NavLink className="navigation-navlink" to="/navigation">
-            <TbNavigationCode />
-            Navigation
-          </NavLink>
-        </div>
-        }
+        {showSideBar && (
+          <div className="links-container">
+            {/* <h3>Getting Started</h3> */}
+            <NavLink className="navigation-navlink intro" to="/introduction">
+              Introduction
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/avatar">
+              <FaUserSecret />
+              Avatar
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/alert">
+              <GoAlert />
+              Alert
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/badge">
+              <BiBadgeCheck />
+              Badge
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/button">
+              <CgPlayButtonR />
+              Button
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/card">
+              <BsCardImage />
+              Card
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/utility">
+              <AiOutlineSetting />
+              Utility
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/navigation">
+              <TbNavigationCode />
+              Navigation
+            </NavLink>
+          </div>
+        )}
 
         <div className="routes-container">
           <Routes>

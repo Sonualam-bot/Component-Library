@@ -16,7 +16,7 @@ export const CardDoc = () => {
           <p>only</p>
        </CardPrice>
        <Typography> SHIMZAN High Speed & Smooth 3x3 Cube for Kids Playing & Learning (6x6x6 CM)  (1 Pieces)</Typography>
-       <CardButton>
+       <CardButton>z
           <button> <AiOutlineShoppingCart /> Add To Cart</button>
           <button>Buy Now</button>
        </CardButton>

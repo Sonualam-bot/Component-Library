@@ -3,6 +3,7 @@ import "./Header.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
 
+import { AiFillGithub } from "react-icons/ai"
 
 
 
@@ -69,6 +70,8 @@ export const Header = () => {
                         Home
                     </NavLink>
                     <NavLink to="/comp" className="navlinkTEM">Components</NavLink>
+                    <NavLink to="https://github.com/Sonualam-bot/Component-Library" target="_blank" > <AiFillGithub /></NavLink>
+
                 </div>
             </div>
         </>
