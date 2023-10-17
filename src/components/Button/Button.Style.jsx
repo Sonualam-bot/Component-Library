@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .4rem;
+  gap: 0.4rem;
   text-transform: capitalize;
   font-weight: 600;
   font-size: 16px;
@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
   transition: 0.2s all ease-out;
   &:hover {
     background-color: ${(props) =>
-    props.variant !== "outline" ? "#FFF" : "#818cf8"};
+      props.variant !== "outline" ? "#FFF" : "#818cf8"};
     color: ${(props) => (props.variant !== "outline" ? "#818cf8" : "#FFF")};
   }
 `;
@@ -35,16 +35,16 @@ export const FancyButton = styled(StyledButton)`
 `;
 
 export const SubmitButton = styled(StyledButton).attrs({
-  type: "Submit"
+  type: "Submit",
 })`
   box-shadow: 0 9px #818cf8;
   background-color: #818cf8;
-  &:hover{
+  &:hover {
     color: #818cf8;
   }
   &:active {
     background-color: ${(props) =>
-    props.variant !== "outline" ? "#818cf8" : "#FFF"};
+      props.variant !== "outline" ? "#818cf8" : "#FFF"};
     box-shadow: 0 5px #818cf8;
     transform: translateY(4px);
   }
@@ -56,49 +56,108 @@ export const DarkButton = styled(StyledButton)`
   color: ${(props) => props.theme.dark.text};
 `;
 
-
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 0.5rem;
-`
+`;
 export const ContainerIcon = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 0.5rem;
-`
+  margin: 1rem 0;
+`;
+
+export const FloatingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  margin: 1rem;
+`;
 
 export const Line = styled.hr`
   font-weight: 600;
   color: grey;
   margin: 1rem 0 1rem 0;
   width: 80vw;
-`
-
+`;
 
 export const StyledIconButton = styled(StyledButton)`
-border: 2px solid #065f46;
-   background-color: ${(props) =>
+  border: 2px solid #065f46;
+  background-color: ${(props) =>
     props.variant === "icon" ? "#FFF" : "#065f46"};
   color: ${(props) => (props.variant === "icon" ? "#404040" : "#FFF")};
-&:hover {
+  &:hover {
     background-color: ${(props) =>
-    props.variant !== "icon" ? "#FFF" : "#065f46"};
+      props.variant !== "icon" ? "#FFF" : "#065f46"};
     color: ${(props) => (props.variant !== "icon" ? "#065f46" : "#FFF")};
-}
-`
+  }
+`;
 
 export const DangerButton = styled(StyledButton)`
   border: 2px solid #b91c1c;
-   background-color: ${(props) =>
+  background-color: ${(props) =>
     props.variant === "danger" ? "#b91c1c" : "#FFF"};
   color: ${(props) => (props.variant === "danger" ? "#FFF" : "#b91c1c")};
   &:hover {
     background-color: ${(props) =>
-    props.variant !== "danger" ? "#FFF" : "#b91c1c"};
+      props.variant !== "danger" ? "#FFF" : "#b91c1c"};
     color: ${(props) => (props.variant !== "danger" ? "#b91c1c" : "#FFF")};
-}
-  
+  }
 `;
+
+const FloatingBtn = styled.button`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  background-color: #0074e4;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  ${(props) =>
+    props.action === "search" &&
+    `
+    background-color: #3498db; 
+  `}
+  ${(props) =>
+    props.action === "edit" &&
+    `
+    background-color: #f39c12; 
+  `}
+    ${(props) =>
+    props.action === "delete" &&
+    `
+    background-color: #e74c3c; 
+  `};
+`;
+
+const FloatingActionButton = ({ action }) => {
+  return <FloatingBtn action={action}>{getIconForAction(action)}</FloatingBtn>;
+};
+
+function getIconForAction(action) {
+  switch (action) {
+    case "search":
+      return "🔍";
+    case "edit":
+      return "✏️";
+    case "delete":
+      return "🗑️";
+    default:
+      return "+";
+  }
+}
+
+export default FloatingActionButton;

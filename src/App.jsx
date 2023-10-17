@@ -17,9 +17,11 @@ import { GoAlert } from "react-icons/go";
 import { BiBadgeCheck } from "react-icons/bi";
 import { CgPlayButtonR } from "react-icons/cg";
 import { BsCardImage } from "react-icons/bs";
+import { BsCardChecklist } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
 import { TbNavigationCode } from "react-icons/tb";
 import { Component } from "./pages/component/Component";
+import { ImagesDoc } from "./documentation/ImagesDoc";
 
 export default function App() {
   const location = useLocation();
@@ -53,8 +55,12 @@ export default function App() {
               Button
             </NavLink>
             <NavLink className="navigation-navlink" to="/card">
-              <BsCardImage />
+              <BsCardChecklist />
               Card
+            </NavLink>
+            <NavLink className="navigation-navlink" to="/images">
+              <BsCardImage />
+              Image
             </NavLink>
             <NavLink className="navigation-navlink" to="/utility">
               <AiOutlineSetting />
@@ -76,7 +82,7 @@ export default function App() {
             <Route path="/badge" element={<BadgeDoc />} />
             <Route path="/button" element={<ButtonDoc />} />
             <Route path="/card" element={<CardDoc />} />
-            {/* <Route path="/heading" element={<HeadingDoc />} /> */}
+            <Route path="/images" element={<ImagesDoc />} />
             <Route path="/navigation" element={<NavigationDoc />} />
             <Route path="/utility" element={<UtilityDoc />} />
             <Route path="/comp" element={<Component />} />
