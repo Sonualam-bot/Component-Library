@@ -197,7 +197,7 @@ export const Overlay = styled.div`
   position: absolute;
   top: 60%;
   left: 0;
-  width: 30%;
+  width: 100%;
   height: 40%;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
@@ -212,7 +212,7 @@ export const Overlay = styled.div`
 
 export const HoverCard = styled.div`
   position: relative;
-
+  max-width: 320px;
   &:hover {
     ${Overlay} {
       opacity: 1;
